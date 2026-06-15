@@ -36,15 +36,15 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(5, 5, 5, 0.64);
+      background: rgba(5, 5, 5, 0.62);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .nav {
-      max-width: 1240px;
+      max-width: 1180px;
       margin: auto;
-      padding: 16px 22px;
+      padding: 14px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -53,64 +53,64 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-weight: 900;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
     .brand img {
-      width: 46px;
-      height: 46px;
+      width: 42px;
+      height: 42px;
       object-fit: contain;
-      filter: drop-shadow(0 0 18px rgba(255,255,255,0.35));
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: 12px;
       color: #cfcfcf;
     }
 
     .nav-cta {
-      padding: 11px 18px;
+      padding: 10px 16px;
       border-radius: 999px;
       background: #ffffff;
       color: #000;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
     }
 
     .hero {
       min-height: 100vh;
+      min-height: 100svh;
       position: relative;
       display: flex;
       align-items: center;
-      padding: 150px 22px 90px;
+      padding: 130px 20px 70px;
       overflow: hidden;
       background:
         radial-gradient(circle at 50% 20%, rgba(255,255,255,0.18), transparent 22%),
-        radial-gradient(circle at 15% 80%, rgba(120,120,120,0.18), transparent 32%),
+        radial-gradient(circle at 15% 80%, rgba(150,130,80,0.18), transparent 32%),
         linear-gradient(180deg, #080808, #000000 65%);
     }
 
-    .hero:before {
+    .hero::before {
       content: "";
       position: absolute;
       width: 900px;
       height: 900px;
       border-radius: 50%;
-      top: -400px;
+      top: -440px;
       left: 50%;
       transform: translateX(-50%);
-      background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 65%);
+      background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 66%);
       animation: floatGlow 6s ease-in-out infinite;
     }
 
-    .hero:after {
+    .hero::after {
       content: "";
       position: absolute;
       inset: 0;
@@ -121,12 +121,12 @@
     }
 
     @keyframes floatGlow {
-      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.75; }
       50% { transform: translateX(-50%) scale(1.08); opacity: 1; }
     }
 
     .hero-inner {
-      max-width: 1240px;
+      max-width: 1180px;
       margin: auto;
       width: 100%;
       position: relative;
@@ -138,7 +138,7 @@
     }
 
     .hero-logo {
-      width: min(46vw, 420px);
+      width: min(54vw, 420px);
       margin-bottom: 34px;
       filter: drop-shadow(0 0 34px rgba(255,255,255,0.42));
       animation: pulseLogo 2.8s ease-in-out infinite;
@@ -150,38 +150,38 @@
         filter: drop-shadow(0 0 24px rgba(255,255,255,0.35));
       }
       50% {
-        transform: scale(1.08);
+        transform: scale(1.07);
         filter: drop-shadow(0 0 70px rgba(255,255,255,0.72));
       }
     }
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       padding: 8px 14px;
-      border: 1px solid rgba(255,255,255,0.32);
+      border: 1px solid rgba(255,255,255,0.28);
       border-radius: 999px;
       color: #e8e8e8;
       font-size: 12px;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       background: rgba(255,255,255,0.045);
     }
 
     h1 {
-      max-width: 1050px;
-      font-size: clamp(46px, 8vw, 112px);
+      max-width: 980px;
+      font-size: clamp(44px, 8vw, 108px);
       line-height: 0.9;
       letter-spacing: -4px;
       text-transform: uppercase;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .hero p {
-      max-width: 760px;
+      max-width: 720px;
       color: #d6d6d6;
-      font-size: 20px;
-      margin-bottom: 38px;
+      font-size: 19px;
+      margin-bottom: 34px;
     }
 
     .buttons {
@@ -219,16 +219,16 @@
     }
 
     section {
-      padding: 100px 22px;
+      padding: 92px 20px;
     }
 
     .container {
-      max-width: 1240px;
+      max-width: 1180px;
       margin: auto;
     }
 
     .section-title {
-      font-size: clamp(36px, 6vw, 84px);
+      font-size: clamp(36px, 6vw, 80px);
       line-height: 0.95;
       letter-spacing: -3px;
       text-transform: uppercase;
@@ -238,8 +238,8 @@
     .section-subtitle {
       max-width: 760px;
       color: #bdbdbd;
-      font-size: 19px;
-      margin-bottom: 48px;
+      font-size: 18px;
+      margin-bottom: 44px;
     }
 
     .split {
@@ -250,7 +250,7 @@
     }
 
     .statement {
-      font-size: clamp(34px, 5vw, 76px);
+      font-size: clamp(34px, 5vw, 74px);
       line-height: 0.98;
       letter-spacing: -3px;
       text-transform: uppercase;
@@ -265,15 +265,28 @@
       font-size: 18px;
     }
 
-    .services {
+    .services,
+    .numbers,
+    .portfolio {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .service-card {
-      min-height: 250px;
-      padding: 28px;
+    .services {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .numbers {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portfolio {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .service-card,
+    .number,
+    .project {
       border-radius: 28px;
       background:
         radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 42%),
@@ -282,9 +295,16 @@
       transition: 0.25s ease;
     }
 
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255,255,255,0.32);
+    .service-card {
+      min-height: 245px;
+      padding: 28px;
+    }
+
+    .service-card:hover,
+    .project:hover,
+    .number:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255,255,255,0.30);
     }
 
     .service-card small {
@@ -294,31 +314,24 @@
     }
 
     .service-card h3 {
-      font-size: 27px;
+      font-size: 26px;
       text-transform: uppercase;
       margin: 18px 0 12px;
     }
 
-    .service-card p {
+    .service-card p,
+    .project p {
       color: #c8c8c8;
     }
 
-    .numbers {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
     .number {
-      padding: 36px;
-      border-radius: 28px;
+      padding: 34px;
       background: #0e0e0e;
-      border: 1px solid rgba(255,255,255,0.09);
     }
 
     .number strong {
       display: block;
-      font-size: clamp(48px, 7vw, 92px);
+      font-size: clamp(48px, 7vw, 90px);
       letter-spacing: -4px;
       margin-bottom: 10px;
     }
@@ -329,20 +342,9 @@
       font-weight: 800;
     }
 
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
     .project {
-      min-height: 300px;
-      border-radius: 30px;
+      min-height: 280px;
       padding: 24px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025)),
-        radial-gradient(circle at center, rgba(255,255,255,0.14), transparent 55%);
-      border: 1px solid rgba(255,255,255,0.09);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -354,13 +356,8 @@
       margin-bottom: 8px;
     }
 
-    .project p {
-      color: #cfcfcf;
-      font-size: 15px;
-    }
-
     .cta {
-      padding: 80px 24px;
+      padding: 76px 24px;
       border-radius: 38px;
       text-align: center;
       background:
@@ -376,7 +373,7 @@
     }
 
     .cta h2 {
-      font-size: clamp(38px, 7vw, 92px);
+      font-size: clamp(38px, 7vw, 90px);
       line-height: 0.92;
       letter-spacing: -3px;
       text-transform: uppercase;
@@ -408,14 +405,14 @@
     }
 
     footer {
-      padding: 42px 22px;
+      padding: 42px 20px;
       border-top: 1px solid rgba(255,255,255,0.08);
       color: #929292;
       font-size: 14px;
     }
 
     .footer-inner {
-      max-width: 1240px;
+      max-width: 1180px;
       margin: auto;
       display: flex;
       justify-content: space-between;
@@ -424,13 +421,18 @@
     }
 
     @media (max-width: 900px) {
+      header {
+        background: rgba(5, 5, 5, 0.48);
+      }
+
       .nav {
         justify-content: center;
+        padding: 12px 16px;
       }
 
       .brand img {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
       }
 
       .brand-text,
@@ -441,21 +443,38 @@
 
       .hero {
         min-height: 100svh;
-        padding: 92px 18px 52px;
+        padding: 86px 18px 42px;
+        align-items: flex-start;
+      }
+
+      .hero::after {
+        background:
+          linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.92)),
+          repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 70px);
       }
 
       .hero-logo {
-        width: min(82vw, 360px);
-        margin-bottom: 34px;
+        width: min(86vw, 390px);
+        margin: 18px 0 34px;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 1px;
+        margin-bottom: 18px;
       }
 
       h1 {
-        font-size: clamp(42px, 14vw, 68px);
-        letter-spacing: -2px;
+        font-size: clamp(42px, 15vw, 72px);
+        line-height: 0.9;
+        letter-spacing: -2.2px;
+        margin-bottom: 22px;
       }
 
       .hero p {
         font-size: 16px;
+        line-height: 1.55;
+        margin-bottom: 28px;
       }
 
       .buttons {
@@ -464,10 +483,11 @@
 
       .btn {
         width: 100%;
+        padding: 15px 18px;
       }
 
       section {
-        padding: 74px 18px;
+        padding: 68px 18px;
       }
 
       .split,
@@ -477,8 +497,50 @@
         grid-template-columns: 1fr;
       }
 
-      .statement {
+      .statement,
+      .section-title,
+      .cta h2 {
         letter-spacing: -2px;
+      }
+
+      .statement {
+        font-size: clamp(36px, 12vw, 58px);
+      }
+
+      .section-subtitle {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+
+      .text-box {
+        font-size: 16px;
+      }
+
+      .service-card {
+        min-height: auto;
+        padding: 24px;
+      }
+
+      .number {
+        padding: 28px;
+      }
+
+      .project {
+        min-height: 210px;
+      }
+
+      .cta {
+        padding: 56px 20px;
+        border-radius: 30px;
+      }
+
+      .cta img {
+        width: 100px;
+      }
+
+      .floating-wa {
+        width: 56px;
+        height: 56px;
       }
     }
   </style>
@@ -517,7 +579,7 @@
       </p>
 
       <div class="buttons">
-        <a class="btn btn-primary" href="https://wa.me/393400517978?text=Ciao%20Vanessa%2C%20vorrei%20informazioni%20sui%20servizi%20di%20MV%20Agency" target="_blank">Prenota una call</a>
+        <a class="btn btn-primary" href="https://wa.me/393400517978?text=Ciao%20Vanessa%2C%20vorrei%20informazioni%20sui%20servizi%20di%20MV%20Agency" target="_blank">Scrivi a Vanessa</a>
         <a class="btn btn-secondary" href="#services">Scopri i servizi</a>
         <a class="btn btn-secondary" href="https://www.instagram.com/mvagencysocialmediastrategist/" target="_blank">Instagram</a>
       </div>
