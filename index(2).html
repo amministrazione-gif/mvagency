@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MV Agency | Comunicazione, Marketing e Digital Strategy</title>
+  <meta name="description" content="MV Agency è un'agenzia di comunicazione specializzata in marketing, siti web, SEO, social media, advertising e strategie digitali." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050505;
+      color: #ffffff;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.64);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      max-width: 1240px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px rgba(255,255,255,0.35));
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: #cfcfcf;
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #000;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 150px 22px 90px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,255,255,0.18), transparent 22%),
+        radial-gradient(circle at 15% 80%, rgba(120,120,120,0.18), transparent 32%),
+        linear-gradient(180deg, #080808, #000000 65%);
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      border-radius: 50%;
+      top: -400px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 65%);
+      animation: floatGlow 6s ease-in-out infinite;
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.88)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 120px);
+      pointer-events: none;
+    }
+
+    @keyframes floatGlow {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+      50% { transform: translateX(-50%) scale(1.08); opacity: 1; }
+    }
+
+    .hero-inner {
+      max-width: 1240px;
+      margin: auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-logo {
+      width: min(46vw, 420px);
+      margin-bottom: 34px;
+      filter: drop-shadow(0 0 34px rgba(255,255,255,0.42));
+      animation: pulseLogo 2.8s ease-in-out infinite;
+    }
+
+    @keyframes pulseLogo {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 24px rgba(255,255,255,0.35));
+      }
+      50% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 70px rgba(255,255,255,0.72));
+      }
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.32);
+      border-radius: 999px;
+      color: #e8e8e8;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.045);
+    }
+
+    h1 {
+      max-width: 1050px;
+      font-size: clamp(46px, 8vw, 112px);
+      line-height: 0.9;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #d6d6d6;
+      font-size: 20px;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #000;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      opacity: 0.88;
+    }
+
+    section {
+      padding: 100px 22px;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 6vw, 84px);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      color: #bdbdbd;
+      font-size: 19px;
+      margin-bottom: 48px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .statement {
+      font-size: clamp(34px, 5vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+    }
+
+    .statement span {
+      color: #9f9f9f;
+    }
+
+    .text-box {
+      color: #cfcfcf;
+      font-size: 18px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 250px;
+      padding: 28px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 42%),
+        linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.09);
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,0.32);
+    }
+
+    .service-card small {
+      color: #999;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .service-card h3 {
+      font-size: 27px;
+      text-transform: uppercase;
+      margin: 18px 0 12px;
+    }
+
+    .service-card p {
+      color: #c8c8c8;
+    }
+
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .number {
+      padding: 36px;
+      border-radius: 28px;
+      background: #0e0e0e;
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .number strong {
+      display: block;
+      font-size: clamp(48px, 7vw, 92px);
+      letter-spacing: -4px;
+      margin-bottom: 10px;
+    }
+
+    .number span {
+      color: #bdbdbd;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 300px;
+      border-radius: 30px;
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025)),
+        radial-gradient(circle at center, rgba(255,255,255,0.14), transparent 55%);
+      border: 1px solid rgba(255,255,255,0.09);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .project h3 {
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: #cfcfcf;
+      font-size: 15px;
+    }
+
+    .cta {
+      padding: 80px 24px;
+      border-radius: 38px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.17), transparent 35%),
+        linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.11);
+    }
+
+    .cta img {
+      width: 120px;
+      margin-bottom: 28px;
+      animation: pulseLogo 2.8s ease-in-out infinite;
+    }
+
+    .cta h2 {
+      font-size: clamp(38px, 7vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: #d0d0d0;
+      font-size: 18px;
+    }
+
+    .floating-wa {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #000;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+
+    footer {
+      padding: 42px 22px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #929292;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        justify-content: center;
+      }
+
+      .brand img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .brand-text,
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        min-height: 100svh;
+        padding: 92px 18px 52px;
+      }
+
+      .hero-logo {
+        width: min(82vw, 360px);
+        margin-bottom: 34px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 14vw, 68px);
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .buttons {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 74px 18px;
+      }
+
+      .split,
+      .services,
+      .numbers,
+      .portfolio {
+        grid-template-columns: 1fr;
+      }
+
+      .statement {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#">
+      <img src="logo-mv.png" alt="MV Agency">
+      <div class="brand-text">MV Agency</div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#about">Chi siamo</a>
+      <a href="#services">Servizi</a>
+      <a href="#portfolio">Progetti</a>
+      <a href="#contact">Contatti</a>
+    </nav>
+
+    <a class="nav-cta" href="https://wa.me/393400517978?text=Ciao%20Vanessa%2C%20vorrei%20informazioni%20sui%20servizi%20di%20MV%20Agency" target="_blank">Parla con Vanessa</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="logo-mv.png" alt="MV Agency">
+      <div class="eyebrow">Communication • Marketing • Digital Strategy</div>
+      <h1>Comunicazione. Idee. Impatto.</h1>
+      <p>
+        MV Agency costruisce identità, strategie e contenuti per brand che vogliono crescere,
+        farsi notare e trasformare la presenza online in risultati concreti.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://wa.me/393400517978?text=Ciao%20Vanessa%2C%20vorrei%20informazioni%20sui%20servizi%20di%20MV%20Agency" target="_blank">Prenota una call</a>
+        <a class="btn btn-secondary" href="#services">Scopri i servizi</a>
+        <a class="btn btn-secondary" href="https://www.instagram.com/mvagencysocialmediastrategist/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container split">
+      <h2 class="statement">Non facciamo solo post. <span>Costruiamo risultati.</span></h2>
+      <div class="text-box">
+        <p>
+          MV Agency nasce per aiutare attività, professionisti e aziende a comunicare meglio.
+          Analizziamo il posizionamento, definiamo una strategia e trasformiamo idee, contenuti,
+          campagne e siti web in strumenti di crescita reale.
+        </p>
+        <br>
+        <p>
+          Ogni progetto parte da una domanda semplice: cosa deve ottenere il cliente?
+          Da lì costruiamo il percorso più efficace.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Cosa facciamo</h2>
+      <p class="section-subtitle">
+        Una struttura completa per curare immagine, comunicazione e acquisizione clienti.
+      </p>
+
+      <div class="services">
+        <div class="service-card">
+          <small>01</small>
+          <h3>Marketing</h3>
+          <p>Strategie su misura per posizionare il brand, aumentare la visibilità e generare contatti.</p>
+        </div>
+
+        <div class="service-card">
+          <small>02</small>
+          <h3>Siti Web</h3>
+          <p>Landing page, siti vetrina, pagine evento e soluzioni digitali veloci, moderne e orientate alla conversione.</p>
+        </div>
+
+        <div class="service-card">
+          <small>03</small>
+          <h3>SEO</h3>
+          <p>Ottimizzazione dei contenuti e della struttura per essere trovati meglio sui motori di ricerca.</p>
+        </div>
+
+        <div class="service-card">
+          <small>04</small>
+          <h3>Social Media</h3>
+          <p>Gestione editoriale, contenuti, format, copywriting e presenza costante su Instagram, Facebook, TikTok e LinkedIn.</p>
+        </div>
+
+        <div class="service-card">
+          <small>05</small>
+          <h3>Advertising</h3>
+          <p>Campagne Meta Ads e Google Ads per promuovere servizi, prodotti, eventi e attività locali.</p>
+        </div>
+
+        <div class="service-card">
+          <small>06</small>
+          <h3>Branding</h3>
+          <p>Identità visiva, tono di voce, contenuti, grafiche e materiali coordinati per rendere il brand riconoscibile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container numbers">
+      <div class="number">
+        <strong>+40</strong>
+        <span>Progetti gestiti</span>
+      </div>
+      <div class="number">
+        <strong>+300%</strong>
+        <span>Lead generati</span>
+      </div>
+      <div class="number">
+        <strong>+150%</strong>
+        <span>Visibilità online</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Progetti & Clienti</h2>
+      <p class="section-subtitle">
+        Strategie diverse per obiettivi diversi: locali, ristorazione, eventi, aziende, professionisti e nuovi brand.
+      </p>
+
+      <div class="portfolio">
+        <div class="project">
+          <h3>Local Business</h3>
+          <p>Visibilità locale, campagne e acquisizione clienti.</p>
+        </div>
+
+        <div class="project">
+          <h3>Eventi</h3>
+          <p>Comunicazione, landing, liste, contenuti e promozione.</p>
+        </div>
+
+        <div class="project">
+          <h3>Ristorazione</h3>
+          <p>Brand identity, social, menu digitali e campagne.</p>
+        </div>
+
+        <div class="project">
+          <h3>Brand</h3>
+          <p>Posizionamento, immagine e strategia digitale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="cta">
+        <img src="logo-mv.png" alt="MV Agency">
+        <h2>Facciamo crescere il tuo business.</h2>
+        <p>
+          Raccontaci il tuo progetto. Ti aiutiamo a capire cosa comunicare,
+          dove investire e come trasformare la tua presenza online in risultati.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="https://wa.me/393400517978?text=Ciao%20Vanessa%2C%20vorrei%20informazioni%20sui%20servizi%20di%20MV%20Agency" target="_blank">Scrivi a Vanessa</a>
+          <a class="btn btn-secondary" href="mailto:calamiavanessa97@gmail.com">Email</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/mvagencysocialmediastrategist/" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<a class="floating-wa" href="https://wa.me/393400517978?text=Ciao%20Vanessa%2C%20vorrei%20informazioni%20sui%20servizi%20di%20MV%20Agency" target="_blank">WA</a>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 MV Agency — Communication & Digital Strategy</div>
+    <div>Vanessa • 340 051 7978 • calamiavanessa97@gmail.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
